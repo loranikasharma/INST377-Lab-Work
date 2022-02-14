@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
-    let squares = Array.from(document.querySelectorAll('.grid div')
-    const ScoreDisplay = document.querySelector('#score')
+    let squares = Array.from(document.querySelectorAll('.grid div'))
     const StartBtn = document.querySelector('#start-button')
+    const ScoreDisplay = document.querySelector('#score')
     const width = 10
     let nextRandom = 0
     let timerId=null
@@ -67,6 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
             current=theTetromino[random][currentPosition]
             currentPosition=4
             draw()
+            displayShape()
+            addScore()
+            gameOver()
         }
     }
     function moveLeft(){
