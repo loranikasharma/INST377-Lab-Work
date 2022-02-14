@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
    const theTetromino=[lTetromino,zTetromino,tTetromino,oTetromino,iTetromino]
    
-    
+    let currentPosition=4
+    let current=theTetromino[0]
 
 });
