@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const displayIndex = 0;
 
   const upNextTetromiones = [
-    [1, displayWidth + 1, displayWidth * 2 + 1, 2],
-    [0, displayWidth, displayWidth + 1, displayWidth * 2 + 1],
-    [1, displayWidth, displayWidth + 1, displayWidth + 2],
-    [0, 1, displayWidth, displayWidth + 1],
-    [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1]
+    [1, displayWidth+1, displayWidth*2+1, 2],
+    [0, displayWidth, displayWidth+1, displayWidth*2+1],
+    [1, displayWidth, displayWidth+1, displayWidth+2],
+    [0, 1, displayWidth, displayWidth+1],
+    [1, displayWidth+1, displayWidth*2+1, displayWidth*3+1]
 
   ];
 
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function displayShape() {
     displaySquares.forEach((square) => {
       square.classList.remove('tetromino');
-      square.style.backgroundColor = '';
+      //square.style.backgroundColor = '';
     });
     upNextTetromiones[nextRandom].forEach((index) => {
       displaySquares[displayIndex + index].classList.add('tetromino');
