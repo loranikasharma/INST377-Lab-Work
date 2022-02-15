@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentRotation = 0;
   let random = Math.floor(Math.random() * theTetromino.length);
   let current = theTetromino[random][currentRotation];
-  const displaySquares = document.querySelectorAll('mini-grid div');
+  const displaySquares = document.querySelectorAll('.mini-grid div');
   const displayWidth = 4;
   const displayIndex = 0;
 
