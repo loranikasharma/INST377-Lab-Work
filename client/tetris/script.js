@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     upNextTetromiones[nextRandom].forEach((index) => {
       displaySquares[displayIndex + index].classList.add('tetromino');
-    });
+    })
   }
 
   function freeze() {
