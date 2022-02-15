@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let nextRandom = 0;
   let timerId = null;
   let score = 0;
-  const colors = ['purple', 'orange', 'yellow', 'red', 'blue'];
+  const colors = ['purple', 'orange', 'pink', 'red', 'blue'];
   // The Tetrominoes
   const lTetromino = [[1, width + 1, width * 2 + 1, 2],
     [width, width + 1, width + 2, width * 2 + 2], 
