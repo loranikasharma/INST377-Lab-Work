@@ -61,12 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   document.addEventListener('keyup', control);
 
-  function moveDown() {
-    undraw();
-    currentPosition += width;
-    draw();
-    freeze();
-  }
   function freeze() {
     if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
       current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
@@ -79,6 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
       addScore();
       gameOver();
     }
+  }
+  function moveDown() {
+    undraw();
+    currentPosition += width;
+    draw();
+    freeze();
   }
   function moveLeft() {
     undraw();
@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       currentPosition -= 1;
     }
     draw();
+    freeze();
   }
   function rotate() {
     undraw();
