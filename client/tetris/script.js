@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function displayShape() {
     displaySquares.forEach((square) => {
       square.classList.remove('tetromino');
-      //square.style.backgroundColor = '';
+      square.style.backgroundColor = '';
     })
     upNextTetromiones[nextRandom].forEach((index) => {
       displaySquares[displayIndex + index].classList.add('tetromino');
