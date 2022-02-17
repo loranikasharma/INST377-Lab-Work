@@ -122,3 +122,10 @@
 .carousel .carousel_item--visible{
     display:block;
 }
+.carousel .carousel_actions{
+    display:flex;
+    justify-content: space-between;
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%)
+}
