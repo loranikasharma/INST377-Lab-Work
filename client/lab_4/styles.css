@@ -129,3 +129,9 @@
     top:50%;
     transform:translateY(-50%)
 }
+.carousel .carousel_actions button{
+    border-radius:50px;
+    border:0;
+    font-weight: bold;
+
+}
