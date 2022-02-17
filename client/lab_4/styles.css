@@ -105,3 +105,10 @@
     background-color: rgba(0,139, 139,0.8);
     overflow: hidden;
 }
+
+.carousel{
+    overflow:hidden;
+    max-width: 600px;
+    position:relative;
+}
+
