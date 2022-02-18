@@ -11,7 +11,7 @@ function moveToPrevSlide() {
   if (slidePosition === totalSlides) {
     slidePosition = 0;
   } else {
-    slidePosition++;
+    slidePosition--;
   }
 }
 document.querySelector('carousel_button--next').addEventListener('click', () => {
