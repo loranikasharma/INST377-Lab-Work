@@ -124,7 +124,7 @@
 }
 .carousel .carousel_actions{
     display:flex;
-    width:100%;
+    
     justify-content: space-between;
     position: absolute;
     top:50%;
@@ -143,5 +143,5 @@
     margin-left: 20px;
 }
 .carousel .carousel_actions button#carousel_button--next{
-    margin-left: 20px;
+    margin-right: 20px;
 }
