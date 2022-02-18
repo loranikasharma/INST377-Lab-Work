@@ -1,6 +1,6 @@
 /* eslint-disable no-plusplus */
 let slidePosition = 0;
-const slides = document.querySelectorAll('carousel_item');
+const slides = document.querySelectorAll('.carousel_item');
 const totalSlides = slides.length;
 function updateSlidePosition() {
   // eslint-disable-next-line no-restricted-syntax
