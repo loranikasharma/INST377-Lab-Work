@@ -121,6 +121,7 @@
 }
 .carousel .carousel_item--visible{
     display:block;
+    animation: fadeVisibility 0.5s;
 }
 .carousel .carousel_actions{
     display:flex;
