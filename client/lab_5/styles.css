@@ -24,6 +24,10 @@ body {
 .container {
   max-width: 960px;
   margin-top: 25px;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  gap:200px;
 }
 .Lab-5-form-header{
   text-align: left;
@@ -102,13 +106,7 @@ body {
 .form-rows button:active{
   background-color: lightseagreen;
 }
-.container{
-  display:flex;
-  
-  flex-direction:row;
-  justify-content: space-around;
-  gap:200px;
-}
+
 .block{
   width: 500px;
   height:100px;
@@ -159,12 +157,13 @@ body {
 .form-rows button{
   margin-left: 50px;;
 }
-.container{
+.container {
+  max-width: 960px;
+  margin-top: 25px;
   display:flex;
   flex-direction:row;
   justify-content: space-around;
   gap:200px;
-
 }
 .block{
   width: 500px;
