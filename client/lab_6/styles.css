@@ -113,7 +113,7 @@
   
   .block{
     width: 500px;
-    height:100px;
+    height:400px;
     background-color: lightyellow;
     flex-basis: 100%;
     border:3px;
@@ -172,7 +172,7 @@
   }
   .block{
     width: 500px;
-    height:100px;
+    height:400px;
     background-color: lightyellow;
     flex-basis: 100%;
     border:3px;

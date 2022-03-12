@@ -20,7 +20,8 @@ function createHTMLList(collection) {
     const {name} = item;
     const display_name = name.toLowerCase();
     const inject_this_item = `<li>${display_name}</li>`;
-    target_list.innerHTML = inject_this_item;
+
+    target_list.innerHTML += inject_this_item;
   });
 }
 
