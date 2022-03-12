@@ -12,6 +12,7 @@ function dataHandler(dataArray) {
     return dataArray[number_Of_Resteraunt];
   });
   return list_Items;
+}
   function createHTMLList(collection) {
     const target_list = document.querySelector('.resturant-id');
     target_list.innerHTML = '';
@@ -32,10 +33,10 @@ async function mainEvent() { // the async keyword means we can make API requests
   const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
   const arrayFromJson = await results.json(); // This changes it into data we can use - an object
   if (arrayFromJson.data.length > 0) {
+    submit.style.display = 'block';
     form.addEventListener('submit', async (submitEvent) => {
       submitEvent.preventDefault();
       console.log('form submission');
-      submit.getElementsByClassName.display = 'block';
       const restuarant_array = dataHandler(arrayFromJson.data);
       createHTMLList(restuarant_array);
     });
