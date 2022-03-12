@@ -13,20 +13,17 @@ function dataHandler(dataArray) {
   });
   return list_Items;
 }
-  function createHTMLList(collection) {
-    const target_list = document.querySelector('.resturant-id');
-    target_list.innerHTML = '';
-    collection.forEach((item) => {
-      const {name} = item;
-      const display_name = name.toLowerCase();
-      const inject_this_item = `<li>${display_name}</li>`;
-      target_list.innerHTML = inject_this_item;
-    });
-  }
-  // range.forEach((item) => {
-  //   console.log('range item', item);
-  // });
+function createHTMLList(collection) {
+  const target_list = document.querySelector('.resturant-id');
+  target_list.innerHTML = '';
+  collection.forEach((item) => {
+    const {name} = item;
+    const display_name = name.toLowerCase();
+    const inject_this_item = `<li>${display_name}</li>`;
+    target_list.innerHTML = inject_this_item;
+  });
 }
+
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.Lab-5-form');
   const submit = document.querySelector('.form-rows');
