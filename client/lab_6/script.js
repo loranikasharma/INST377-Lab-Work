@@ -1,9 +1,30 @@
+/* eslint-disable camelcase */
+function getRandomIntInclusive(min, max) {
+  const new_Min = Math.ceil(min);
+  const new_Max = Math.floor(max);
+  return Math.floor(Math.random() * (new_Max - new_Min + 1) + new_Min);
+}
 function dataHandler(dataArray) {
   console.table(dataArray);
   const range = [...Array(15).keys()];
-  range.forEach((item) => {
-    console.log('range item', item);
+  const list_Items = range.map((item, index) => {
+    const number_Of_Resteraunt = getRandomIntInclusive(0, dataArray.length - 1);
+    return dataArray[number_Of_Resteraunt];
   });
+  return list_Items;
+  function createHTMLList(collection) {
+    const target_list = document.querySelector('.resturant-id');
+    target_list.innerHTML = '';
+    collection.forEach((item) => {
+      const {name} = item;
+      const display_name = name.toLowerCase();
+      const inject_this_item = `<li>${display_name}</li>`;
+      target_list.innerHTML = inject_this_item;
+    });
+  }
+  // range.forEach((item) => {
+  //   console.log('range item', item);
+  // });
 }
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.Lab-5-form');
@@ -15,7 +36,8 @@ async function mainEvent() { // the async keyword means we can make API requests
       submitEvent.preventDefault();
       console.log('form submission');
       submit.getElementsByClassName.display = 'block';
-      dataHandler(arrayFromJson.data);
+      const restuarant_array = dataHandler(arrayFromJson.data);
+      createHTMLList(restuarant_array);
     });
   }
   // this is called "dot notation"
