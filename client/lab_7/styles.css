@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
+      ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+    background-color: darkslategray;
+  }
+  
+  /* Page Layout */
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .wrapper {
+    display: flex;
+  }
+  .container {
+    max-width: 960px;
+    margin-top: 25px;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    gap:200px;
+  }
+  .Lab-5-form-header{
+    text-align: left;
+    background-color: lightblue;
+    border:1px solid;
+    border-radius: 3px;
+    width:80%;
+    margin:40px 0;
+    padding:50px;
+    justify-content: space-around;
+    
+  }
+  .Lab-5-form h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .Lab-5-form{
+    background-color: lavender;
+    border:1px solid white;
+    border-radius: 3px;
+    width:80%;
+    padding: 50px;
+    margin:0 0 40px 0;
+    justify-content: space-around;
+    
+  
+   
+  }
+  .form-rows{
+    margin-bottom: 40px;
+    display: block;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap:wrap;
+  
+  }
+  .form-rows input[type='text']{
+    background-color: wheat;
+    border: 1px solid grey;
+    border-radius: 3px;
+    width:100%;
+    padding:7px;
+    font-size:14px;
+  
+   
+  }
+  .form-rows label{
+    margin-bottom: 15px;
+  }
+  .legacy-form-row{
+    border:none;
+    margin-bottom: 40px;
+  
+  }
+  .legacy-form-row legend{
+    margin-bottom:15px;
+  }
+  .legacy-form-row .radio-label{
+    display:block;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+  }
+  .legacy-form-row .radio-label,
+  .legacy-form-row input[type='radio'] {
+    float: left;
+  }
+  .form-rows button{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: lightgreen;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 40px;
+    cursor: pointer;
+  }
+  .form-rows button:hover{
+    background-color: lightsalmon;
+  }
+  .form-rows button:active{
+    background-color: lightseagreen;
+  }
+  
+  .block{
+    width: 500px;
+    height:400px;
+    background-color: lightyellow;
+    flex-basis: 100%;
+    border:3px;
+    align-self: center;
+    
+    
+  }
+  
+  @media only screen and (min-width: 1000px) {
+    .Lab-5-form-header{
+      width: 800px;
+  
+    }
+    .Lab-5-form{
+      width:400px;
+      justify-content: space-around;
+    }
+    .form-rows{
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .form-rows input[type='text']{
+      width: 250px;
+      height:inital;
+  }
+  .form-rows label{
+    text-align: right;
+    width:120px;
+    margin-top: 7px;
+    padding-right:20px ;
+  }
+  .legacy-form-row{
+    margin-bottom: 10px;
+  
+  }
+  .legacy-form-row legend{
+    width:120px;
+    text-align: left;
+    padding-right: 20px;
+  }
+  .legacy-row-form legend{
+    float:left;
+  
+  }
+  .form-rows button{
+    margin-left: 50px;;
+  }
+  .container {
+    max-width: 960px;
+    margin-top: 25px;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    gap:200px;
+  }
+  .block{
+    width: 500px;
+    height:400px;
+    background-color: lightyellow;
+    flex-basis: 100%;
+    border:3px;
+    align-self: center;
+    
+  }
+  }
+  
+  
