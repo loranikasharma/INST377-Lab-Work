@@ -7,14 +7,16 @@ function getRandomIntInclusive(min, max) {
 function dataHandler(dataArray) {
   console.table(dataArray);
   const range = [...Array(15).keys()];
+  // console.log(range);
   const list_Items = range.map((item, index) => {
     const number_Of_Resteraunt = getRandomIntInclusive(0, dataArray.length - 1);
     return dataArray[number_Of_Resteraunt];
   });
+  // console.log(list_Items);
   return list_Items;
 }
 function createHTMLList(collection) {
-  const target_list = document.querySelector('.resturant-id');
+  const target_list = document.querySelector('#resto-list');
   target_list.innerHTML = '';
   collection.forEach((item) => {
     const {name} = item;
@@ -36,9 +38,9 @@ async function mainEvent() { // the async keyword means we can make API requests
   if (arrayFromJson.data.length > 0) {
     submit.style.display = 'block';
     resto_name.addEventListener('input', async(event) => {
-      if (current_array.length < 1) { return; }
       console.log(event.target.value);
-      const selected_val = arrayFromJson.data.filter((item) => {
+      if (current_array.length < 1) { return; }
+      const selected_val = current_array.filter((item) => {
         const lower_name = item.name.toLowerCase();
         const lower_val = event.target.value.toLowerCase();
         return lower_name.includes(lower_val);
