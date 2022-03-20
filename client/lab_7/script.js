@@ -5,14 +5,14 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (new_Max - new_Min + 1) + new_Min);
 }
 function dataHandler(dataArray) {
-  console.table(dataArray);
+  // console.table(dataArray);
   const range = [...Array(15).keys()];
   // console.log(range);
   const list_Items = range.map((item, index) => {
     const number_Of_Resteraunt = getRandomIntInclusive(0, dataArray.length - 1);
     return dataArray[number_Of_Resteraunt];
   });
-  // console.log(list_Items);
+  console.log(list_Items);
   return list_Items;
 }
 function createHTMLList(collection) {
@@ -48,12 +48,11 @@ async function mainEvent() { // the async keyword means we can make API requests
       console.log(selected_val);
       createHTMLList(selected_val);
     });
-    zip_code.addEventListener('input', async(event) => {
-      const zip_value = arrayFromJson.data.filter((item) => {
-        const zip_code_value = item.zip;
-        const zip_provided_value = event.target.value;
-        return zip_code_value.includes(zip_provided_value);
-      });
+    zip_code.addEventListener('input', async(zipevent) => {
+      console.log(zipevent.target.value);
+      if (current_array.length < 1) { return; }
+      const zip_value = current_array.filter((item) => item.zip.includes(zipevent.target.value));
+      console.log(zip_value);
       createHTMLList(zip_value);
     });
     form.addEventListener('submit', async (submitEvent) => {
