@@ -28,15 +28,37 @@ function createHTMLList(collection) {
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.Lab-5-form');
   const submit = document.querySelector('.form-rows');
+  const resto_name = document.querySelector('#resto_name');
+  const zip_code = document.querySelector('#zip_code');
   const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
   const arrayFromJson = await results.json(); // This changes it into data we can use - an object
+  let current_array = [];
   if (arrayFromJson.data.length > 0) {
     submit.style.display = 'block';
+    resto_name.addEventListener('input', async(event) => {
+      if (current_array.length < 1) { return; }
+      console.log(event.target.value);
+      const selected_val = arrayFromJson.data.filter((item) => {
+        const lower_name = item.name.toLowerCase();
+        const lower_val = event.target.value.toLowerCase();
+        return lower_name.includes(lower_val);
+      });
+      createHTMLList(selected_val);
+      // console.log(matchResto);
+    });
+    zip_code.addEventListener('input', async(event) => {
+      const zip_value = arrayFromJson.data.filter((item) => {
+        const zip_code_value = item.zip;
+        const zip_provided_value = event.target.value;
+        return zip_code_value.includes(zip_provided_value);
+      });
+      createHTMLList(zip_value);
+    });
     form.addEventListener('submit', async (submitEvent) => {
       submitEvent.preventDefault();
-      console.log('form submission');
-      const restuarant_array = dataHandler(arrayFromJson.data);
-      createHTMLList(restuarant_array);
+      // console.log('form submission');
+      current_array = dataHandler(arrayFromJson.data);
+      createHTMLList(current_array);
     });
   }
   // this is called "dot notation"
