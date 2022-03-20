@@ -43,8 +43,8 @@ async function mainEvent() { // the async keyword means we can make API requests
         const lower_val = event.target.value.toLowerCase();
         return lower_name.includes(lower_val);
       });
+      console.log(matchResto);
       createHTMLList(selected_val);
-      // console.log(matchResto);
     });
     zip_code.addEventListener('input', async(event) => {
       const zip_value = arrayFromJson.data.filter((item) => {
