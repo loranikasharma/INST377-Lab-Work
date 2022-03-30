@@ -12,4 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     bird.style.bottom = birdBottom + 'px'
     bird.style.left = birdLeft + 'px';
   }
+  let timerId = setInterval(startGame, 20);
+  clearInterval(timerId);
 });
