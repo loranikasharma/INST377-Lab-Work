@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (obstacleLeft > 200 && obstacleLeft < 200 && birdLeft === 220 || birdBottom === 0) {
         gameOver();
+        clearInterval(timerId);
       }
     }
     let timerId = setInterval(moveObstacle, 100);
