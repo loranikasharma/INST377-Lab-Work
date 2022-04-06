@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 7</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script> 
+  </head>
+  <body style="background-color: lightpink">
+    <header class="Lab-5-form-header body">
+      <h1><strong>Loranika Sharma's Lab 8</strong> </h1>
+    </header>
+    
+    <div class="container wrapper">
+      
+      
+      <form
+        action=""
+        
+        class="Lab-5-form"
+      >
+        <div class="form-rows wrapper">
+          <label for="resto_name"><strong>Resteraunt Name</strong></label>
+          <input id="resto_name" name="resto_name" type="text" />
+          <label for="zip_code"><strong>ZipCode</strong></label>
+          <input id="zip_code" name="zip_code" type="text" />
+        </div>
+        
+        <fieldset class="legacy-form-row">
+          <legend><strong>Veggie or Vegan</strong></legend>
+          <input id="Veggie" name="Veggie" type="radio" value="veggie-choice" />
+          <label for="Veggie" class="radio-label"><strong>Yes</strong></label>
+          <input
+            id="Vegan"
+            name="Vegan"
+            type="radio"
+             
+            
+          />
+          <label for="Vegan" class="radio-label"><strong>No</strong></label>
+        </fieldset>
+        <div class="form-rows">
+          <button>Change Resteraunt</button>
+        </div>
+      </form>
+      <div class="block">
+        <div id="map"></div>
+        <h1>Resteraunt List</h1>
+        <ul id="resto-list"></ul>
+
+      </div>
+    </div>
+
+
+
+    
+  </body>
+</html>
