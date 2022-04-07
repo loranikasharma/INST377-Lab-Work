@@ -27,8 +27,8 @@ function createHTMLList(collection) {
   });
 }
 function initMap() {
-  const latitude_longitude = [38.784, 76.872];
-  const map = L.map('map').setView(latitude_longitude, 17);
+  const latitude_longitude = [51.505, -0.09];
+  const map = L.map('map').setView(latitude_longitude, 13);
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
