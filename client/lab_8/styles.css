@@ -121,6 +121,9 @@
     
     
   }
+  .block-item-wide {
+      width: 640px;
+  }
   #map { height: 180px; }
   
   @media only screen and (min-width: 1000px) {

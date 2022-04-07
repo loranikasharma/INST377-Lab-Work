@@ -26,14 +26,27 @@ function createHTMLList(collection) {
     target_list.innerHTML += inject_this_item;
   });
 }
+function initMap() {
+  const map = L.map('map').setView([51.505, -0.09], 13);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'your.mapbox.access.token'
+  }).addTo(map);
+}
 
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.Lab-5-form');
   const submit = document.querySelector('.form-rows');
   const resto_name = document.querySelector('#resto_name');
   const zip_code = document.querySelector('#zip_code');
-  const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
-  const arrayFromJson = await results.json(); // This changes it into data we can use - an object
+  const map = initMap('map');
+  // const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
+  // const arrayFromJson = await results.json(); // This changes it into data we can use - an object
+  const arrayFromJson = {data: []};
   let current_array = [];
   if (arrayFromJson.data.length > 0) {
     submit.style.display = 'block';
