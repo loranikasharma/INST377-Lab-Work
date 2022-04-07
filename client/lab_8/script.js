@@ -36,6 +36,7 @@ function initMap() {
     zoomOffset: -1,
     accessToken: 'your.mapbox.access.token'
   }).addTo(map);
+  return map;
 }
 
 async function mainEvent() { // the async keyword means we can make API requests
@@ -43,7 +44,7 @@ async function mainEvent() { // the async keyword means we can make API requests
   const submit = document.querySelector('.form-rows');
   const resto_name = document.querySelector('#resto_name');
   const zip_code = document.querySelector('#zip_code');
-  const map = initMap('map');
+  const map = initMap();
   // const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
   // const arrayFromJson = await results.json(); // This changes it into data we can use - an object
   const arrayFromJson = {data: []};
