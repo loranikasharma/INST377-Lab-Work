@@ -124,7 +124,7 @@
   .block-item-wide {
       width: 640px;
   }
-  #map { height: 180px; }
+  #map { height: 360px; }
   
   @media only screen and (min-width: 1000px) {
     .Lab-5-form-header{
@@ -183,5 +183,5 @@
     align-self: center;
     
   }
-  #map { height: 180px; }
+  #map { height: 360px; }
   }
