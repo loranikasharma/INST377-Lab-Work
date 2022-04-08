@@ -26,9 +26,9 @@ function createHTMLList(collection) {
     target_list.innerHTML += inject_this_item;
   });
 }
-function initMap() {
+function initMap(targetId) {
   const latitude_longitude = [38.784, -76.872];
-  const map = L.map('map').setView(latitude_longitude, 13);
+  const map = L.map(targetId).setView(latitude_longitude, 13);
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -40,12 +40,19 @@ function initMap() {
   return map;
 }
 
+function addMapMarkers(map, collection) {
+  collection.forEach((item) => {
+    const point = item.geocoded_column_1?.coordinates;
+    L.marker([point[1], point[0]]).addTo(map);
+  });
+}
+
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.Lab-5-form');
   const submit = document.querySelector('.form-rows');
   const resto_name = document.querySelector('#resto_name');
   const zip_code = document.querySelector('#zip_code');
-  const map = initMap();
+  const map = initMap('map');
   const retrievalVar = 'restaurants';
 
   const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
@@ -83,6 +90,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       // console.log('form submission');
       current_array = dataHandler(arrayFromJson.data);
       createHTMLList(current_array);
+      addMapMarkers(map, current_array);
     });
   }
   // this is called "dot notation"
