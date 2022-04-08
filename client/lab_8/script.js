@@ -27,7 +27,7 @@ function createHTMLList(collection) {
   });
 }
 function initMap() {
-  const latitude_longitude = [51.505, -0.09];
+  const latitude_longitude = [38.784, -76.872];
   const map = L.map('map').setView(latitude_longitude, 13);
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -47,18 +47,19 @@ async function mainEvent() { // the async keyword means we can make API requests
   const zip_code = document.querySelector('#zip_code');
   const map = initMap();
   const retrievalVar = 'restaurants';
-  if (localStorage.getItem(retrievalVar) === undefined) {
-    const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
-    const arrayFromJson = await results.json(); // This changes it into data we can use - an object
-    localStorage.setItem(retrievalVar, JSON.stringify(arrayFromJson));
-  }
+
+  const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
+  const arrayFromJson = await results.json(); // This changes it into data we can use - an object
+  localStorage.setItem(retrievalVar, JSON.stringify(arrayFromJson));
+
   const storedData = localStorage.getItem(retrievalVar);
   const storedDataArray = JSON.parse(storedData);
-  
+
   // const arrayFromJson = {data: []};
-  let current_array = [];
-  if (storedDataArray > 0) {
+
+  if (arrayFromJson.data.length > 0) {
     submit.style.display = 'block';
+    let current_array = [];
     resto_name.addEventListener('input', async(event) => {
       console.log(event.target.value);
       if (current_array.length < 1) { return; }
@@ -80,7 +81,7 @@ async function mainEvent() { // the async keyword means we can make API requests
     form.addEventListener('submit', async (submitEvent) => {
       submitEvent.preventDefault();
       // console.log('form submission');
-      current_array = dataHandler(storedDataArray);
+      current_array = dataHandler(arrayFromJson.data);
       createHTMLList(current_array);
     });
   }
