@@ -41,9 +41,20 @@ function initMap(targetId) {
 }
 
 function addMapMarkers(map, collection) {
+  let count = 0;
+  map.eachLayer((layer) => {
+    if (layer instanceof L.Marker) {
+      layer.remove();
+    }
+  });
   collection.forEach((item) => {
     const point = item.geocoded_column_1?.coordinates;
+    console.log(item.geocoded_column_1?.coordinates);
     L.marker([point[1], point[0]]).addTo(map);
+    if (count === 0) {
+      map.panTo([point[1], [point[0]]]);
+      count += 1;
+    }
   });
 }
 
