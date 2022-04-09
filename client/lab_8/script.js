@@ -81,20 +81,30 @@ async function mainEvent() { // the async keyword means we can make API requests
     resto_name.addEventListener('input', async(event) => {
       console.log(event.target.value);
       if (current_array.length < 1) { return; }
-      const selected_val = storedDataArray.filter((item) => {
+      const selected_val = current_array.filter((item) => {
         const lower_name = item.name.toLowerCase();
         const lower_val = event.target.value.toLowerCase();
         return lower_name.includes(lower_val);
       });
       console.log(selected_val);
-      createHTMLList(selected_val);
+      if (selected_val.length > 0) {
+        createHTMLList(selected_val);
+        addMapMarkers(map,selected_val);
+      } else if (layer instanceof L.Marker) {
+        layer.remove();
+      }
     });
     zip_code.addEventListener('input', async(zipevent) => {
       console.log(zipevent.target.value);
       if (current_array.length < 1) { return; }
       const zip_value = current_array.filter((item) => item.zip.includes(zipevent.target.value));
       console.log(zip_value);
-      createHTMLList(zip_value);
+      if (zip_value.length > 0) {
+        createHTMLList(zip_value);
+        addMapMarkers(map,zip_value);
+      } else if (layer instanceof L.Marker) {
+        layer.remove();
+      }
     });
     form.addEventListener('submit', async (submitEvent) => {
       submitEvent.preventDefault();
